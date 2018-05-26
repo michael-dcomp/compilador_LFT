@@ -1,0 +1,76 @@
+	Helpers
+		
+		letra = [['a' .. 'z'] + ['A' .. 'Z']];
+		digito = ['0' .. '9'];
+		cr = 13 ;
+		lf = 10 ;
+		tab = 9 ;
+		qualquer_caractere = [0x0 .. 0xfffff] ;
+
+		
+	Tokens
+	
+	// Pontuação
+		 underline = '_';
+		 pontoevirgula = ';';
+		 virgula = ',';
+		 doispontos = ':';
+		 mais = '+';
+		 menos = '-';
+		 mult = '*';
+		 div = '/';
+		 mod = '%';
+		 lpar = '(';
+		 rpar = ')';
+		 lsbrack = '[';
+		 rsbrack = ']';
+		 lcbrack = '{';
+		 rcbrack = '}';
+		 atrib = ':=';
+		 equal = '=';
+		 menorigual = '<=';
+		 maiorigual = '>=';
+		 menor = '<';
+		 maior = '>';
+		 nao = 'nao';
+		 e = 'e';
+		 ou = 'ou';
+		 espaco = ' ' ;
+		 tab = tab;
+		 lbreak = ( cr | lf | cr lf);
+		
+
+	//Palavras reservadas
+		 pr_caractere = 'caractere';
+		 pr_real = 'real';
+		 pr_inteiro = 'inteiro';
+		 pr_inicio = 'inicio';
+		 pr_fim = 'fim';
+		 pr_se = 'se';
+		 pr_senao = 'senao';
+		 pr_enquanto = 'enquanto';
+		 pr_para = 'para';
+		 pr_avalie = 'avalie';
+		 pr_caso = 'caso';
+		 pr_verdadeiro = 'verdadeiro';
+		 pr_falso = 'falso';
+		 pr_booleano = 'booleano';
+
+	//Outros
+	
+		identificador = (letra | '_') (letra | digito | '_')*;
+		
+		 string = ''' qualquer_caractere ''' ;
+		 
+		 inteiro = digito+ ;
+		 
+		 real = digito+ ',' digito+ ;
+		
+		 blank = (' ' | cr | lf | tab);
+		
+		 commentline = '//' [qualquer_caractere - [cr + lf]]+ (cr|lf)? ;
+		 
+	 Ignored Tokens
+	
+		commentline,
+		blank;
