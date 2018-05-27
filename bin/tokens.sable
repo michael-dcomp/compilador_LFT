@@ -11,66 +11,75 @@
 	Tokens
 	
 	// Pontuação
-		 underline = '_';
-		 pontoevirgula = ';';
-		 virgula = ',';
-		 doispontos = ':';
-		 mais = '+';
-		 menos = '-';
-		 mult = '*';
-		 div = '/';
-		 mod = '%';
-		 lpar = '(';
-		 rpar = ')';
-		 lsbrack = '[';
-		 rsbrack = ']';
-		 lcbrack = '{';
-		 rcbrack = '}';
-		 atrib = ':=';
-		 equal = '=';
-		 menorigual = '<=';
-		 maiorigual = '>=';
-		 menor = '<';
-		 maior = '>';
-		 nao = 'nao';
-		 e = 'e';
-		 ou = 'ou';
-		 espaco = ' ' ;
-		 tab = tab;
-		 lbreak = ( cr | lf | cr lf);
+		doispontos = ':';
+		pontoevirg = ';';
+		ponto = '.';
+		virg = ',';
+	//	underscore = '_';
+		
+		aprentese = '(';
+		fparentese = ')';
+		
+		mais = '+';
+		menos = '-';
+		mult = '*';
+		div = '/';
+		
+		maiorq = '>';
+		menorq = '<';
+		maiorigual = '>=';
+		menorigual = '<=';
+		igual = '=';
+		atrib = ':=';
+		
+		nao = 'nao';
+		e = 'e';
+		ou = 'ou';
+		
+		lbreak = ( cr | lf | cr lf);
+		tab = tab;
+		espaco = ' ';
 		
 
 	//Palavras reservadas
-		 pr_caractere = 'caractere';
-		 pr_real = 'real';
-		 pr_inteiro = 'inteiro';
-		 pr_inicio = 'inicio';
-		 pr_fim = 'fim';
-		 pr_se = 'se';
-		 pr_senao = 'senao';
-		 pr_enquanto = 'enquanto';
-		 pr_para = 'para';
-		 pr_avalie = 'avalie';
-		 pr_caso = 'caso';
-		 pr_verdadeiro = 'verdadeiro';
-		 pr_falso = 'falso';
-		 pr_booleano = 'booleano';
+		 string = 'caractere';
+		 inteiro = 'inteiro';
+		 real = 'real';
+		 inicio = 'inicio';
+		 programa = 'programa';
+		 fimprograma = 'fim.';
+		 se = 'se';
+		 senao = 'senao';
+		 enquanto = 'enquanto';
+		 repita = 'repita';
+		 para = 'para';
+		 avalie = 'avalie';
+		 caso = 'caso';
+		 verdadeiro = 'verdadeiro';
+		 falso = 'falso';
+		 booleano = 'booleano';
+		 escreva = 'escreva';
+		 leia = 'leia';
 
 	//Outros
 	
-		identificador = (letra | '_') (letra | digito | '_')*;
+		id = (letra | '_') (letra | digito | '_')*;
 		
-		 string = ''' qualquer_caractere ''' ;
+		texto = ''' qualquer_caractere ''' ;
 		 
-		 inteiro = digito+ ;
+		num = digito+ ;
 		 
-		 real = digito+ ',' digito+ ;
+		numreal = digito+ ',' digito+ ;
 		
-		 blank = (' ' | cr | lf | tab);
+		blank = (' ' | cr | lf | tab);
 		
-		 commentline = '//' [qualquer_caractere - [cr + lf]]+ (cr|lf)? ;
+		comentariolinha = '//' [qualquer_caractere - [cr + lf]]+ (cr|lf)? ;
+		
+		comentarioblococomeco = '/*';
+		
+		comentarioblocofim = '*/';
 		 
 	 Ignored Tokens
 	
-		commentline,
+		comentariolinha,
 		blank;

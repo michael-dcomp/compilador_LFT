@@ -1,0 +1,6 @@
+// oi bla bla bla 938402 .sadaskp 
+oi := 32;
+
+/*
+Comentario de bloco
+*/

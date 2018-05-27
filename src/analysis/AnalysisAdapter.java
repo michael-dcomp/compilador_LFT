@@ -69,25 +69,37 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTUnderline(TUnderline node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPontoevirgula(TPontoevirgula node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTVirgula(TVirgula node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
     public void caseTDoispontos(TDoispontos node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTPontoevirg(TPontoevirg node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTPonto(TPonto node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTVirg(TVirg node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTAprentese(TAprentese node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTFparentese(TFparentese node)
     {
         defaultCase(node);
     }
@@ -117,61 +129,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTMod(TMod node)
+    public void caseTMaiorq(TMaiorq node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTLpar(TLpar node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTRpar(TRpar node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTLsbrack(TLsbrack node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTRsbrack(TRsbrack node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTLcbrack(TLcbrack node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTRcbrack(TRcbrack node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTAtrib(TAtrib node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTEqual(TEqual node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTMenorigual(TMenorigual node)
+    public void caseTMenorq(TMenorq node)
     {
         defaultCase(node);
     }
@@ -183,13 +147,19 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTMenor(TMenor node)
+    public void caseTMenorigual(TMenorigual node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTMaior(TMaior node)
+    public void caseTIgual(TIgual node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTAtrib(TAtrib node)
     {
         defaultCase(node);
     }
@@ -213,7 +183,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTEspaco(TEspaco node)
+    public void caseTLbreak(TLbreak node)
     {
         defaultCase(node);
     }
@@ -225,97 +195,7 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTLbreak(TLbreak node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrCaractere(TPrCaractere node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrReal(TPrReal node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrInteiro(TPrInteiro node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrInicio(TPrInicio node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrFim(TPrFim node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrSe(TPrSe node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrSenao(TPrSenao node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrEnquanto(TPrEnquanto node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrPara(TPrPara node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrAvalie(TPrAvalie node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrCaso(TPrCaso node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrVerdadeiro(TPrVerdadeiro node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrFalso(TPrFalso node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTPrBooleano(TPrBooleano node)
-    {
-        defaultCase(node);
-    }
-
-    @Override
-    public void caseTIdentificador(TIdentificador node)
+    public void caseTEspaco(TEspaco node)
     {
         defaultCase(node);
     }
@@ -339,13 +219,139 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseTInicio(TInicio node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTPrograma(TPrograma node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTFimprograma(TFimprograma node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTSe(TSe node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTSenao(TSenao node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTEnquanto(TEnquanto node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTRepita(TRepita node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTPara(TPara node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTAvalie(TAvalie node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTCaso(TCaso node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTVerdadeiro(TVerdadeiro node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTFalso(TFalso node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTBooleano(TBooleano node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTEscreva(TEscreva node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTLeia(TLeia node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTId(TId node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTTexto(TTexto node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTNum(TNum node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTNumreal(TNumreal node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseTBlank(TBlank node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTCommentline(TCommentline node)
+    public void caseTComentariolinha(TComentariolinha node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTComentarioblococomeco(TComentarioblococomeco node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTComentarioblocofim(TComentarioblocofim node)
     {
         defaultCase(node);
     }
