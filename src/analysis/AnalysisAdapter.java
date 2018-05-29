@@ -159,6 +159,12 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
+    public void caseTDiferente(TDiferente node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
     public void caseTAtrib(TAtrib node)
     {
         defaultCase(node);
@@ -345,13 +351,19 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTComentarioblococomeco(TComentarioblococomeco node)
+    public void caseTComment(TComment node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTComentarioblocofim(TComentarioblocofim node)
+    public void caseTCommentEnd(TCommentEnd node)
+    {
+        defaultCase(node);
+    }
+
+    @Override
+    public void caseTCommentBody(TCommentBody node)
     {
         defaultCase(node);
     }

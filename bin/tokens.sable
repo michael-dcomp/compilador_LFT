@@ -6,80 +6,91 @@
 		lf = 10 ;
 		tab = 9 ;
 		qualquer_caractere = [0x0 .. 0xfffff] ;
-
+	
+	States
+		normal,
+		comment;
 		
 	Tokens
 	
 	// Pontuação
-		doispontos = ':';
-		pontoevirg = ';';
-		ponto = '.';
-		virg = ',';
+		{normal} doispontos = ':';
+		{normal} pontoevirg = ';';
+		{normal} ponto = '.';
+		{normal} virg = ',';
 	//	underscore = '_';
 		
-		aprentese = '(';
-		fparentese = ')';
+		{normal} aprentese = '(';
+		{normal} fparentese = ')';
 		
-		mais = '+';
-		menos = '-';
-		mult = '*';
-		div = '/';
+		{normal} mais = '+';
+		{normal} menos = '-';
+		{normal} mult = '*';
+		{normal} div = '/';
 		
-		maiorq = '>';
-		menorq = '<';
-		maiorigual = '>=';
-		menorigual = '<=';
-		igual = '=';
-		atrib = ':=';
+		{normal} maiorq = '>';
+		{normal} menorq = '<';
+		{normal} maiorigual = '>=';
+		{normal} menorigual = '<=';
+		{normal} igual = '=';
+		{normal} diferente = '<>';
+		{normal} atrib = '<-';
 		
-		nao = 'nao';
-		e = 'e';
-		ou = 'ou';
+		{normal} nao = 'nao';
+		{normal} e = 'e';
+		{normal} ou = 'ou';
 		
-		lbreak = ( cr | lf | cr lf);
-		tab = tab;
-		espaco = ' ';
+		{normal} lbreak = ( cr | lf | cr lf);
+		{normal} tab = tab;
+		{normal} espaco = ' ';
 		
 
 	//Palavras reservadas
-		 string = 'caractere';
-		 inteiro = 'inteiro';
-		 real = 'real';
-		 inicio = 'inicio';
-		 programa = 'programa';
-		 fimprograma = 'fim.';
-		 se = 'se';
-		 senao = 'senao';
-		 enquanto = 'enquanto';
-		 repita = 'repita';
-		 para = 'para';
-		 avalie = 'avalie';
-		 caso = 'caso';
-		 verdadeiro = 'verdadeiro';
-		 falso = 'falso';
-		 booleano = 'booleano';
-		 escreva = 'escreva';
-		 leia = 'leia';
+		{normal} string = 'caractere';
+		{normal} inteiro = 'inteiro';
+		{normal} real = 'real';
+		{normal} inicio = 'inicio';
+		{normal} programa = 'programa';
+		{normal} fimprograma = 'fim.';
+		{normal} se = 'se';
+		{normal} senao = 'senao';
+		{normal} enquanto = 'enquanto';
+		{normal} repita = 'repita';
+		{normal} para = 'para';
+		{normal} avalie = 'avalie';
+		{normal} caso = 'caso';
+		{normal} verdadeiro = 'verdadeiro';
+		{normal} falso = 'falso';
+		{normal} booleano = 'booleano';
+		{normal} escreva = 'escreva';
+		{normal} leia = 'leia';
 
 	//Outros
 	
-		id = (letra | '_') (letra | digito | '_')*;
+		{normal} id = (letra | '_') (letra | digito | '_')*;
 		
-		texto = ''' qualquer_caractere ''' ;
+		{normal} texto = ''' qualquer_caractere ''' ;
 		 
-		num = digito+ ;
+		{normal} num = digito+ ;
 		 
-		numreal = digito+ ',' digito+ ;
+		{normal} numreal = digito+ ',' digito+ ;
 		
-		blank = (' ' | cr | lf | tab);
+		{normal} blank = (' ' | cr | lf | tab);
 		
-		comentariolinha = '//' [qualquer_caractere - [cr + lf]]+ (cr|lf)? ;
+	//Comentários
+		{normal} comentariolinha = '//' [qualquer_caractere - [cr + lf]]+ (cr|lf)? ;
 		
-		comentarioblococomeco = '/*';
+		{normal->comment, comment}
+			comment = '/*';
 		
-		comentarioblocofim = '*/';
+		{comment} comment_end = '*/';
+		{comment} comment_body = [qualquer_caractere - ['*' + '/']]*;
+		
 		 
 	 Ignored Tokens
 	
 		comentariolinha,
+//		comentarioblococomeco,
+//		comentarioblococonteudo,
+//		comentarioblocofim,
 		blank;

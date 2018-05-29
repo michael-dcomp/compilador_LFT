@@ -17,16 +17,21 @@ public class LexTest {
 		String Tclass = token.getClass().getSimpleName();
 		
 		while (!Tclass.equals("EOF")){
-			if (Tclass.equals("TEspaco")) System.out.print(" ");
-			else if (Tclass.equals("TTab")) System.out.print("	");
-			else if (Tclass.equals("TLbreak")) System.out.println();
-			else if (Tclass.equals("TBlank")) System.out.print("");
-			else if (Tclass.equals("TCommentline")) System.out.println("TCommentline");
-			else System.out.print(Tclass);
-			
-			token = lexer.next();
-
-			Tclass = token.getClass().getSimpleName();
+			try {
+				if (Tclass.equals("TEspaco")) System.out.print(" ");
+				else if (Tclass.equals("TTab")) System.out.print("	");
+				else if (Tclass.equals("TLbreak")) System.out.println();
+				else if (Tclass.equals("TBlank")) System.out.print("");
+				else if (Tclass.equals("TCommentline")) System.out.println("TCommentline");
+				else System.out.print(Tclass);
+				
+				token = lexer.next();
+	
+				Tclass = token.getClass().getSimpleName();
+			} catch (LexerException ex) { 
+				System.out.println(ex);
+				token = lexer.next();
+			}
 		}
 		
 	}

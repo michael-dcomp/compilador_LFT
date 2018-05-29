@@ -26,6 +26,7 @@ public interface Analysis extends Switch
     void caseTMaiorigual(TMaiorigual node);
     void caseTMenorigual(TMenorigual node);
     void caseTIgual(TIgual node);
+    void caseTDiferente(TDiferente node);
     void caseTAtrib(TAtrib node);
     void caseTNao(TNao node);
     void caseTE(TE node);
@@ -57,8 +58,9 @@ public interface Analysis extends Switch
     void caseTNumreal(TNumreal node);
     void caseTBlank(TBlank node);
     void caseTComentariolinha(TComentariolinha node);
-    void caseTComentarioblococomeco(TComentarioblococomeco node);
-    void caseTComentarioblocofim(TComentarioblocofim node);
+    void caseTComment(TComment node);
+    void caseTCommentEnd(TCommentEnd node);
+    void caseTCommentBody(TCommentBody node);
     void caseEOF(EOF node);
     void caseInvalidToken(InvalidToken node);
 }
