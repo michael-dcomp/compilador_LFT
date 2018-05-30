@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PushbackReader;
 
+import lexer.ComentarioAninhado;
 import lexer.Lexer;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
 			try {
 					File f = new File("src/Test.txt");
 				
-					Lexer lexer = new Lexer (new PushbackReader(new FileReader(f), 1024));
+					ComentarioAninhado lexer = new ComentarioAninhado (new PushbackReader(new FileReader(f), 1024));
 	
 					LexTest lexTest = new LexTest();
 					lexTest.TestLex(lexer);

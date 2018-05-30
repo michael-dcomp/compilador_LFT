@@ -1,10 +1,7 @@
-teste <- 2;
-
-// olá q /
-
-/*
-
-
-*/
-
 oi
+
+// teste comentario linha
+
+/*  oi oi rsr rs 34 34.6 // */
+
+ola

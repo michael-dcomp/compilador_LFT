@@ -93,13 +93,13 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTAprentese(TAprentese node)
+    public void caseTAPrentese(TAPrentese node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTFparentese(TFparentese node)
+    public void caseTFParentese(TFParentese node)
     {
         defaultCase(node);
     }
@@ -345,25 +345,25 @@ public class AnalysisAdapter implements Analysis
     }
 
     @Override
-    public void caseTComentariolinha(TComentariolinha node)
+    public void caseTComentarioLinha(TComentarioLinha node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTComment(TComment node)
+    public void caseTComentarioBloco(TComentarioBloco node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTCommentEnd(TCommentEnd node)
+    public void caseTComentarioBlocoFim(TComentarioBlocoFim node)
     {
         defaultCase(node);
     }
 
     @Override
-    public void caseTCommentBody(TCommentBody node)
+    public void caseTComentarioBlocoConteudo(TComentarioBlocoConteudo node)
     {
         defaultCase(node);
     }

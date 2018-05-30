@@ -3,6 +3,7 @@ package tester;
 
 import java.io.IOException;
 
+import lexer.ComentarioAninhado;
 import lexer.Lexer;
 import lexer.LexerException;
 import lexer.Lexer.State;
@@ -11,7 +12,7 @@ import node.Token;
 
 public class LexTest {
 
-	public void TestLex(Lexer lexer) throws LexerException, IOException{
+	public void TestLex(ComentarioAninhado lexer) throws LexerException, IOException{
 		
 		Token token = lexer.next();
 		String Tclass = token.getClass().getSimpleName();
@@ -22,7 +23,6 @@ public class LexTest {
 				else if (Tclass.equals("TTab")) System.out.print("	");
 				else if (Tclass.equals("TLbreak")) System.out.println();
 				else if (Tclass.equals("TBlank")) System.out.print("");
-				else if (Tclass.equals("TCommentline")) System.out.println("TCommentline");
 				else System.out.print(Tclass);
 				
 				token = lexer.next();

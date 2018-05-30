@@ -20,8 +20,8 @@
 		{normal} virg = ',';
 	//	underscore = '_';
 		
-		{normal} aprentese = '(';
-		{normal} fparentese = ')';
+		{normal} a_prentese = '(';
+		{normal} f_parentese = ')';
 		
 		{normal} mais = '+';
 		{normal} menos = '-';
@@ -78,19 +78,19 @@
 		{normal} blank = (' ' | cr | lf | tab);
 		
 	//Comentários
-		{normal} comentariolinha = '//' [qualquer_caractere - [cr + lf]]+ (cr|lf)? ;
+		{normal} comentario_linha = '//' [qualquer_caractere - [lf + cr]]* (lf|cr|lf cr);
 		
 		{normal->comment, comment}
-			comment = '/*';
+			comentario_bloco = '/*';
 		
-		{comment} comment_end = '*/';
-		{comment} comment_body = [qualquer_caractere - ['*' + '/']]*;
+		{comment} comentario_bloco_fim = '*/';
+		{comment} comentario_bloco_conteudo = [qualquer_caractere - ['*' + '/']]*;
 		
 		 
 	 Ignored Tokens
 	
-		comentariolinha,
-//		comentarioblococomeco,
-//		comentarioblococonteudo,
-//		comentarioblocofim,
+		comentario_linha,
+		comentario_bloco,
+		comentario_bloco_conteudo,
+		comentario_bloco_fim,
 		blank;
